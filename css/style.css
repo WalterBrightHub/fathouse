@@ -1,0 +1,19 @@
+
+.title:hover{
+    text-decoration: none;
+}
+body{
+    background-color: rgb(240, 240, 240);
+}
+#house{
+    background-color: white;
+}
+.has-read{
+    font-weight: normal;
+    color: #606060!important;
+    
+}
+.has-not-read, .title{
+    font-weight:bold;
+
+}
