@@ -30,21 +30,21 @@ $(function(){
             $("#ithome24h a").each(function(){
                 url=$(this).attr("href");
                 smurl=url.split('/')[5].split('.')[0];
-                if(Cookies.get(smurl)){
-                    //console.log("has read");
+                if(localStorage.getItem(smurl)){
                     $(this).addClass("list-group-item has-read");
+
                 }
                 else{
-                    //console.log("has not read");
+                    
                     $(this).addClass("list-group-item has-not-read");
                 }
                 $(this).click(function(){
                     url=$(this).attr("href");//https://www.ithome.com/html/it/361100.htm
                     smurl=url.split('/')[5].split('.')[0];//361100
-                    console.log(smurl);
-                    if(!Cookies.get(smurl)){
-                        //设置一个2天的Cookie
-                        Cookies.set(smurl, 1, { expires: 2 });
+                    //console.log(smurl);
+                    if(!localStorage.getItem(smurl)){
+                        
+                        localStorage.setItem(smurl,"1");
                         $(this).toggleClass("has-read has-not-read");
                     }
                 });
